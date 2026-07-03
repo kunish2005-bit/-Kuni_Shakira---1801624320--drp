@@ -1,3 +1,22 @@
+import  sqlite3
+
+conn = sqlite3.connect("StudiO.db")
+cursor = conn.cursor()
+
+def tambah_data():
+    tanggal = input("Tanggal: ") 
+    mata_kuliah = input("Mata kuliah: ")
+    durasi = int(input("Durasi: "))
+    evaluasi = input("Evaluasi: ")
+
+    cursor.execute("""
+    INSERT INTO study (tanggal, mata_kuliah, durasi, evaluasi)
+    VALUES (?, ?, ?, ?)
+    """, (tanggal, mata_kuliah, durasi, evaluasi))
+
+    conn.commit()
+    print("Data berhasil ditambahkan") 
+
 while True:
     print("\n===== StudiO ======")
     print("1. Tambah sesi belajar")

@@ -7,12 +7,91 @@ def tambah_data():
     tanggal = input("Tanggal: ") 
     mata_kuliah = input("Mata kuliah: ")
     durasi = int(input("Durasi: "))
-    evaluasi = input("Evaluasi: ")
+    evaluasi = input("Evaluasi: ") 
 
     cursor.execute("""
     INSERT INTO study (tanggal, mata_kuliah, durasi, evaluasi)
     VALUES (?, ?, ?, ?)
-    """, (tanggal, mata_kuliah, durasi, evaluasi))
+    """, (tanggal, mata_kuliah, durasi, evaluasi))  
+
+def lihat_data():
+    cursor.execute("SELECT * FROM study")
+    data = cursor.fetchall()
+
+    if len(data) == 0:
+        print("Belum ada data.")
+    else:
+        for row in data:
+            print(f"""
+ID          : {row[0]}
+Tanggal     : {row[1]}
+Mata Kuliah : {row[2]}
+Durasi      : {row[3]} menit
+Evaluasi    : {row[4]}
+------------------------------
+""")
+
+def update_data():
+    id_data = int(input("Masukkan ID yang ingin diupdate: "))
+    durasi = int(input("Durasi baru: "))
+    evaluasi = input("Evaluasi baru: ")
+
+    cursor.execute("""
+    UPDATE study
+    SET durasi=?, evaluasi=?
+    WHERE id=?
+    """, (durasi, evaluasi, id_data))
+
+    conn.commit()
+    print("Data berhasil diperbarui.")
+
+def hapus_data():
+    id_data = int(input("Masukkan ID yang ingin dihapus: "))
+
+    cursor.execute("DELETE FROM study WHERE id=?", (id_data,))
+
+    conn.commit()
+    print("Data berhasil dihapus.")
+
+def total_durasi():
+    cursor.execute("SELECT SUM(durasi) FROM study")
+    hasil = cursor.fetchone()
+
+    if hasil[0] is None:
+        print("Belum ada data.")
+    else:
+        print("Total Durasi Belajar:", hasil[0], "menit")
+
+def hari_produktif():
+    cursor.execute("""
+    SELECT tanggal, SUM(durasi)
+    FROM study
+    GROUP BY tanggal
+    ORDER BY SUM(durasi) DESC
+    LIMIT 1
+    """)
+
+    hasil = cursor.fetchone()
+
+    if hasil:
+        print("Hari paling produktif:", hasil[0])
+        print("Total belajar:", hasil[1], "menit")
+    else:
+        print("Belum ada data.")
+
+def lihat_evaluasi():
+    cursor.execute("SELECT tanggal, evaluasi FROM study")
+    data = cursor.fetchall()
+
+    if len(data) == 0:
+        print("Belum ada evaluasi.")
+    else:
+        for row in data:
+            print(f"""
+Tanggal   : {row[0]}
+Evaluasi  : {row[1]}
+-------------------------
+""")
 
     conn.commit()
     print("Data berhasil ditambahkan") 

@@ -1,3 +1,4 @@
+from json_handler import *
 import  sqlite3
 
 conn = sqlite3.connect("StudiO.db")
@@ -105,7 +106,9 @@ while True:
     print("5. Total durasi belajar")
     print("6. Hari paling produktif")
     print("7. Lihat evaluasi belajar")
-    print("8. Keluar")
+    print("8. export data json")
+    print("9. import data json")
+    print("10. Keluar")
 
     pilihan = input("pilih menu (1-8): ")
     
@@ -124,6 +127,10 @@ while True:
     elif pilihan == "7":
         print("Menu Lihat evaluasi belajar")
     elif pilihan == "8":
+        export_json()
+    elif pilihan == "9":
+        import_json()
+    elif pilihan == "10":
         print("Terima kasih telah menggunakan StudiO")
         break
 

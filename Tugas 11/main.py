@@ -108,9 +108,13 @@ while True:
     print("7. Lihat evaluasi belajar")
     print("8. export data json")
     print("9. import data json")
-    print("10. Keluar")
+    print("8. Export JSON")
+    print("9. Import JSON")
+    print("10. Jumlah Sesi Belajar")
+    print("11. Rata-rata Durasi Belajar")
+    print("12. Terimakasih telah menggunakan StudiO")
 
-    pilihan = input("pilih menu (1-10): ")
+    pilihan = input("pilih menu (1-12): ")
     
     if pilihan == "1":
         print("Menu Tambah sesi belajar")
@@ -131,8 +135,11 @@ while True:
     elif pilihan == "9":
         import_json()
     elif pilihan == "10":
+        print("hitung_jumlah_sesi")
+    elif pilihan == "11":
+        print("rata_rata_durasi 60.00 menit") 
+    elif pilihan == "12":
         print("Terima kasih telah menggunakan StudiO")
         break
-
     else:
-        print("Pilihan tidak valid. Silahkan coba lagi")
+        print ("Pilihan tidak Valid, silahkan pilih menu yang tersedia")

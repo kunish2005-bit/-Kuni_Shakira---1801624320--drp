@@ -110,7 +110,7 @@ while True:
     print("9. import data json")
     print("10. Keluar")
 
-    pilihan = input("pilih menu (1-8): ")
+    pilihan = input("pilih menu (1-10): ")
     
     if pilihan == "1":
         print("Menu Tambah sesi belajar")

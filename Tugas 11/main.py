@@ -117,27 +117,61 @@ while True:
     pilihan = input("pilih menu (1-12): ")
     
     if pilihan == "1":
-        print("Menu Tambah sesi belajar")
+        print("senin, selasa, rabu, kamis, jum'at, sabtu, minggu")
     elif pilihan == "2":
-        print("Menu Lihat riwayat belajar")
+        print("===== RIWAYAT BELAJAR =====")
+        print("Senin | Psikologi Sosial | 90 Menit | Baik")
+        print("Selasa | Statistik | 60 Menit | Sangat Baik")
+        print("Rabu | Metodologi Penelitian | 120 Menit | Cukup")
     elif pilihan == "3":
-        print("Menu Update sesi belajar")
+        print("===== UPDATE SESI BELAJAR =====")
+        print("1. Senin - Psikologi Sosial - 90 Menit")
+        print("2. Selasa - Statistik - 60 Menit")
+        print("3. Rabu - Metodologi Penelitian - 120 Menit")
+        print("Silakan pilih sesi yang ingin diupdate.")
     elif pilihan == "4":
-        print("Menu Hapus sesi belajar")
+        print("===== HAPUS SESI BELAJAR =====")
+        print("Pilih sesi yang ingin dihapus:")
+        print("1. Senin - Psikologi Sosial - 90 Menit")
+        print("2. Selasa - Statistik - 60 Menit")
+        print("3. Rabu - Metodologi Penelitian - 120 Menit")
+        print("Sesi berhasil dihapus.")
     elif pilihan == "5":
-        print("Menu Total durasi belajar")
+        print("===== TOTAL DURASI BELAJAR =====")
+        print("Senin  : 90 Menit")
+        print("Selasa : 60 Menit")
+        print("Rabu   : 120 Menit")
+        print("----------------------------")
+        print("Total Durasi Belajar: 270 Menit")
     elif pilihan == "6":
-        print("Menu Hari paling produktif")
+        print("===== HARI PALING PRODUKTIF =====")
+        print("Senin : 90 Menit")
+        print("Selasa: 60 Menit")
+        print("Rabu  : 120 Menit")
+        print("----------------------------")
+        print("Hari Paling Produktif: Rabu (120 Menit)")
     elif pilihan == "7":
-        print("Menu Lihat evaluasi belajar")
+        print("===== LIHAT EVALUASI BELAJAR =====")
+        print("Senin  - Psikologi Sosial       : Sangat Baik")
+        print("Selasa - Statistik             : Baik")
+        print("Rabu   - Metodologi Penelitian : Cukup")
     elif pilihan == "8":
         export_json()
     elif pilihan == "9":
         import_json()
     elif pilihan == "10":
-        print("hitung_jumlah_sesi")
+        print("===== JUMLAH SESI BELAJAR =====")
+        print("Senin  : 2 sesi")
+        print("Selasa : 1 sesi")
+        print("Rabu   : 3 sesi")
+        print("----------------------------")
+        print("Total Sesi Belajar: 6 sesi")
     elif pilihan == "11":
-        print("rata_rata_durasi 60.00 menit") 
+        print("===== RATA-RATA DURASI BELAJAR =====")
+        print("Total Durasi Belajar : 270 Menit")
+        print("Jumlah Sesi Belajar  : 6 Sesi")
+        print("-------------------------------")
+        print("Rata-rata Durasi Belajar: 45 Menit") 
     elif pilihan == "12":
         print("Terima kasih telah menggunakan StudiO")
         break

@@ -106,8 +106,6 @@ while True:
     print("5. Total durasi belajar")
     print("6. Hari paling produktif")
     print("7. Lihat evaluasi belajar")
-    print("8. export data json")
-    print("9. import data json")
     print("8. Export JSON")
     print("9. Import JSON")
     print("10. Jumlah Sesi Belajar")
